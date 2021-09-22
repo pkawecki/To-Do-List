@@ -35,6 +35,7 @@ class List extends React.Component {
         ));
     }
     render() {
+        console.log(this.props);
         return (
             <div id="list">
                 <section className={styles.component}>
