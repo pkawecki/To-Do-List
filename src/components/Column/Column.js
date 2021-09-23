@@ -5,13 +5,12 @@ import Card from "../Card/Card";
 import Creator from "../Creator/Creator";
 import Icon from "./Icon";
 import { settings } from "../../data/dataStore";
-
 class Column extends React.Component {
     state = {
         cards: this.props.cards || [],
     }
     static propTypes = {
-        columnTitle: PropTypes.node.isRequired,
+        title: PropTypes.node.isRequired,
         //key: PropTypes.node.isRequired,
     }
     addCard(title){
@@ -28,13 +27,17 @@ class Column extends React.Component {
         ))
     }
     render(){
-        
+        const firstElArr = [...this.state.cards].pop();
+        const secondElArr = [...this.state.cards].shift();
         return(
             <section className ={styles.component}>
                 <h3 className={styles.title} > {this.props.title} 
                 <span className={styles.icon}><Icon name={this.props.icon}/></span>
                 </h3>
-                <Card cards={this.state.cards} />
+                {this.state.cards.map((card) => {
+                    return <Card key={card.key} title={card.title} />
+                    }) 
+                }
                 <Creator text={settings.cardCreatorText} action={title => this.addCard(title)} />
             </section>
         )
