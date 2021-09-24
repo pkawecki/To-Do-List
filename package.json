@@ -7,6 +7,8 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "lint": "eslint src/",
+    "lint-fix": "eslint src/ --fix" ,
+
     "pre-commit": "lint-staged"
   },
   "husky": {
