@@ -1,7 +1,7 @@
 import shortid from 'shortid';
 
 
-// selectors
+// selectorss
 export const getSearchString = () => 'ter';
 
 //destructure

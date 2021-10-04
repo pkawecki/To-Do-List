@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "http-server dist",
     "build": "webpack --mode production",
     "lint": "eslint src/",
     "lint-fix": "eslint src/ --fix",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "_comment alternative for start": "webpack-dev-server --mode development --open --hot"
   },
   "husky": {
     "hooks": {
@@ -27,7 +28,8 @@
     "react-dom": "^16.7.0",
     "react-html-parser": "^2.0.2",
     "react-redux": "^7.0.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "http-server": "^13.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
