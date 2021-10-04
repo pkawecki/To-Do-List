@@ -1,6 +1,9 @@
 .vscode
 dist
 
+#temporary unpacked files
+temp-unpacked
+
 # Logs
 logs
 *.log
