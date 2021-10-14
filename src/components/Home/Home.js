@@ -3,7 +3,7 @@ import styles from './Home.scss';
 import ListLink from '../ListLink/ListLink';
 //import {pageContents, listData} from '../../data/dataStore';
 import PropTypes from 'prop-types';
-//import Search from '../Search/SearchContainer';
+// import Search from '../Search/SearchContainer';
 
 class Home extends React.Component {
   static propTypes = {
@@ -19,7 +19,7 @@ class Home extends React.Component {
       <div id="app">
         <main className={styles.component}>
           <h1 className={styles.title}> {title}</h1>
-          <h2 className={styles.subtitle}> {subtitle}</h2> 
+          <h2 className={styles.subtitle}> {subtitle}</h2>
           {lists.map(list => (
             <ListLink key={list.id} {...list} />
           ))}

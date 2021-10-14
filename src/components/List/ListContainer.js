@@ -8,9 +8,10 @@ const mapStateToProps = (state, props) => {
   const filteredList = state.lists.filter(list => list.id == id);
   const listParams = filteredList[0];
 
-  console.log('listParams ',listParams);
-  console.log('matchParams ',props);
+  // console.log('listParams ',listParams);
+  // console.log('mmatchParams ',props);
 
+ 
   return {
     ...listParams,
     columns: getColumnsForList(state, id),

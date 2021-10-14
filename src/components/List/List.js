@@ -11,7 +11,7 @@ import Container from '../Container/Container';
 class List extends React.Component {
     
     static propTypes = {
-      title: PropTypes.node.isRequired,
+      title: PropTypes.node,
       description: PropTypes.node,
       columns: PropTypes.array.isRequired,
       addColumn : PropTypes.func.isRequired,
@@ -23,7 +23,7 @@ class List extends React.Component {
     
     render() {
       const {title,image,description, columns, addColumn} = this.props;
-      console.log(columns);
+      // console.log('columns');
       return (
         <Container>
           <div id="list">

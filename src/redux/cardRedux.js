@@ -1,11 +1,15 @@
 import shortid from 'shortid';
-import { getSearchString } from './searchStringRedux';
 
-const {searchString} = getSearchString();
 //selectors
 export const getCardsForColumn = (
   {cards}, columnId) => cards.filter(
-  card => card.columnId == columnId && new RegExp(searchString, 'i').test(card.title));
+  card => card.columnId == columnId); //&& new RegExp(searchString, 'i').test(card.title));
+
+export const getCardsForSearchResults = (
+  ({cards}, string) => cards.filter(
+    card => new RegExp(string, 'i').test(card.title)
+  )
+);
 
 //action name creator
 const reducerName = 'cards';
@@ -16,10 +20,14 @@ export const ADD_CARD = createActionName('ADD_CARD');
 
 //action creators
 export const createActionAddCard = payload =>(
-  {payload: {
-    ... payload, 
-    id: shortid.generate()},
+  {payload: 
+    {
+      ... payload, 
+      id: shortid.generate(),
+    },
+
   type: ADD_CARD,
+    
   });
 
 

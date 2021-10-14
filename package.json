@@ -6,8 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "lint": "eslint src/",
-    "lint-fix": "eslint src/ --fix",
+    "lint": "eslint src/**/*",
+    "lint-fix": "eslint src/**/*.js --fix",
     "pre-commit": "lint-staged",
     "_dist-server-http": "http-server dist",
     "_comment alternative for start": "webpack-dev-server --mode development --open --hot"
@@ -18,7 +18,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.js": "eslint"
+    "src/**/*.js": "eslint --fix"
   },
   "keywords": [],
   "author": "",
